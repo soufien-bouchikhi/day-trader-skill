@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+# what the skills write while you trade: orders, portfolio, broker log, plans
+trader/
