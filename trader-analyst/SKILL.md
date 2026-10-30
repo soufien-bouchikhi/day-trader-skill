@@ -12,6 +12,8 @@ description: >-
   margins", "sum up the call", "does it report this week", or before trading
   a stock around its earnings.
 argument-hint: "[tickers]"
+model: opus
+effort: high
 ---
 
 # trader-analyst

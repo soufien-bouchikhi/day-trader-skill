@@ -12,6 +12,8 @@ description: >-
   trades", "did any congressman buy X", "alert me when Pelosi files", or
   "run the Pelosi skill".
 argument-hint: "[member name] [--read]"
+model: haiku
+effort: low
 ---
 
 # trader-pelosi

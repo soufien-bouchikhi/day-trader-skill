@@ -13,6 +13,8 @@ description: >-
   out", "stop loss", "what's my R", "risk reward", or right after
   /trader-entry triggers, before /trader-timemachine.
 argument-hint: "[--stop or-mid|or-low|price:X|pct:X|atr:K] [--target 2R|1R|price:X]"
+model: opus
+effort: high
 ---
 
 # trader-exit

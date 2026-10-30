@@ -152,6 +152,29 @@ for the 60 days to October 19 2026, the 10:15 AM opening-range scan, Yahoo's
 TSLA headlines that morning, the House Clerk's 2026 index, real PTR text and
 real XBRL facts. They reproduce every number in the example above.
 
+## Which model runs each skill
+
+Each `SKILL.md` names the model and effort Claude Code uses while that skill
+runs (the `model` and `effort` frontmatter fields; the session model comes
+back on your next prompt). Opus does the thinking where money is on the line,
+cheaper models do the watching:
+
+| model | effort | skills |
+| --- | --- | --- |
+| `opus` | high | exit, timemachine, budget, risk, broker, analyst |
+| `sonnet` | medium | scanner, news |
+| `haiku` | low | entry, alerts, pelosi |
+
+The aliases resolve through `ANTHROPIC_DEFAULT_OPUS_MODEL`,
+`ANTHROPIC_DEFAULT_SONNET_MODEL` and `ANTHROPIC_DEFAULT_HAIKU_MODEL`, so behind
+a gateway such as OpenRouter set those three to the gateway's model names
+(`anthropic/claude-opus-5.5`, `anthropic/claude-sonnet-5.5`,
+`anthropic/claude-haiku-5.5`). Leave `CLAUDE_CODE_EFFORT_LEVEL` unset: it
+overrides the per-skill effort. Every skill names its model, so a Haiku step
+never carries over into a risk check or an order in the same turn. The skills
+hand off through the files in `trader/`, so `/clear` between trades loses
+nothing and keeps every request small.
+
 ## Fine print
 
 **Not financial advice.** This is software that reads public data and does
